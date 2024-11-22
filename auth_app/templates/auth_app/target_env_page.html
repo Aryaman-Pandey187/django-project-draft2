@@ -1,0 +1,75 @@
+<!-- OAT, SIT, DEV?? -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Artificial Data Generator</title>
+    <link href="{% static 'target_env_page/index.css' %}" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <div class="text-item">
+                <h1 id="artificial">ARTIFICIAL</h1>
+                <h3 id="data-generator">DATA GENERATOR</h3>
+                <div id="time"></div>
+            </div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="login-section" id="login-section">
+            <div class="form-box login" id="loginForm">
+                <form method="POST" action="#">
+                    {% csrf_token %}
+                    <h2 style="text-align: left;font-size: 28.6px;">Select Target</h2>
+                    <h2 style="text-align: left; font-size: 30px;">Environment</h2>
+                    <!-- <div class="input-box">
+                        <span class="icon"><i class='bx bxs-data'></i></i></span>
+                        <input type="text" name="source_database" style="color:white;" required>
+                        <label>Database</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-table' ></i></i></span>
+                        <input type="text" name="source_table" style="color:white;" required>
+                        <label>Table</label>
+                    </div> -->
+                    <!-- <div style="text-align: center;">
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                        <label for="html" style="padding-top: 30px; padding-bottom: 30px;font-size: 30px; text-align: center;">DEV</label><br>
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                        <label for="css" style="padding-top: 30px; padding-bottom: 30px;font-size: 30px;text-align: center;">SIT</label><br>
+                        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                        <label for="javascript" style="padding-top: 30px; padding-bottom: 30px;font-size: 30px;text-align: center;">OAT</label>
+                    </div> -->
+                    <div class="radio-buttons">
+                        <div class="radio-item">
+                            <input type="radio" id="dev" name="target_env_name" value="DEV">
+                            <label for="dev" class="radio-label">DEV</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="sit" name="target_env_name" value="SIT">
+                            <label for="sit" class="radio-label">SIT</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="oat" name="target_env_name" value="OAT">
+                            <label for="oat" class="radio-label">OAT</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">NEXT</button>
+                    {% if error %}
+                        <p style="color:red;">{{ error }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="username">Developed by: Aryaman Pandey</div>
+    <script src="{% static 'target_env_page/index.js' %}"></script>
+</body>
+</html>
+

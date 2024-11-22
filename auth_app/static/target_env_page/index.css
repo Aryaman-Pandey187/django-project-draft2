@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: #000;
+}
+
+.background {
+    background: url(backgroun3.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    filter: blur(10px);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 13%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.navbar a:hover:after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.search-bar {
+    width: 250px;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.search-bar button {
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-bar input::placeholder {
+    color: #fff;
+}
+
+.search-bar button i {
+    font-size: 22px;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 550px;
+    margin-top: 20px;
+    background: url(backgroun3.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    color: #fff;
+    background: transparent;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.item .logo {
+    color: #fff;
+    font-size: 30px;
+}
+
+.text-item h2 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.text-item p {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.social-icon a i {
+    color: #fff;
+    font-size: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.social-icon a:hover i {
+    transform: scale(1.2);
+}
+
+.container .login-section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+.login-section .form-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-section .form-box.register {
+    transform: translateX(430px);
+    transition: transform .6s ease;
+    transition-delay: 0s;
+}
+
+.login-section.active .form-box.register {
+    transform: translateX(0px);
+    transition-delay: .7s;
+}
+
+.login-section .form-box.login {
+    transform: translateX(0px);
+    transition: transform .6s ease;
+    transition-delay: 0.7s;
+}
+
+.login-section.active .form-box.login {
+    transform: translateX(430px);
+    transition-delay: 0s;
+}
+
+.login-section .form-box h2 {
+    text-align: left;
+    font-size: 25px;
+}
+
+.form-box .input-box {
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-right: 28px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+
+/* Ensure label moves up correctly on focus or valid state */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -5px;
+    font-size: 12px;
+}
+
+/* Hover effect for password input */
+.input-box input:focus {
+    border-bottom: 2px solid #f72d7a;
+}
+
+.remember-password label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-password a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-password a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    background: #fff;
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #f72d7a;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4);
+}
+
+
+
+#time{
+    /* position: absolute; */
+    /* align-items: end; */
+    /* bottom: 20px; */
+    /* left: 20px; */
+    padding-top: 49.55%;
+}
+
+/* Your previous styles */
+
+.form-box.source {
+    display: none; /* Initially hide the source form */
+}
+
+/* Add smooth transitions for form switching */
+.form-box {
+    transition: transform 0.3s ease;
+}
+
+/* Make sure that the source form is styled properly */
+.source {
+    display: none;
+}
+
+/* Add any additional styles if needed */
+
+#username {
+    position: absolute;
+    bottom: 10px; /* Distance from the bottom */
+    right: 10px;  /* Distance from the right */
+    color: #fff;  /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: 600; /* Font weight */
+    z-index: 1000;  /* Ensure it is above other content */
+    font-family: "poppins", sans-serif;
+}
+
+
+/* Remove default radio button appearance */
+input[type="radio"] {
+    display: none;  /* Hide the default radio button */
+}
+
+/* Container for radio buttons */
+.radio-buttons {
+    display: flex;
+    flex-direction: column;  /* Stack vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    margin-top: 50px;        /* Add top margin to position */
+}
+
+/* Styling for each radio button item */
+.radio-item {
+    margin-bottom: 20px;  /* Space between each radio button */
+    position: relative;
+}
+
+/* Styling for the label */
+.radio-label {
+    font-size: 20px;          /* Set the font size for labels */
+    font-weight: 600;         /* Bold font weight */
+    color: #fff;              /* White color for text */
+    padding: 15px 30px;       /* Padding around the label text */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 25px;      /* Rounded corners */
+    cursor: pointer;         /* Change cursor on hover */
+    text-align: center;       /* Center the text */
+    display: inline-block;    /* Make the label inline-block */
+    transition: all 0.3s ease; /* Smooth transition for hover/focus */
+}
+
+/* Change background and text color on hover */
+.radio-label:hover {
+    background-color: #f72d7a;  /* Change background color on hover */
+    color: #fff;                 /* White text color on hover */
+}
+
+/* Styling when a radio button is selected */
+input[type="radio"]:checked + .radio-label {
+    background-color: #f72d7a; /* Background color when selected */
+    color: #fff;               /* White text color when selected */
+    font-weight: bold;         /* Bold font weight when selected */
+}
+
+/* Optional: Style the container to ensure text is vertically and horizontally centered */
+.radio-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+

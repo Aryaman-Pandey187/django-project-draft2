@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Artificial Data Generator</title>
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <div class="text-item">
+                <h1 id="artificial">ARTIFICIAL</h1>
+                <h3 id="data-generator">DATA GENERATOR</h3>
+                <div id="time"></div>
+            </div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="login-section" id="login-section">
+            <div class="form-box login" id="loginForm">
+                <!-- <form action="javascript:void(0);">
+                    <h2>PROD Credentials</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="text" id="intranetID" style="color:white;" required>
+                        <label>Intranet ID</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" id="password" style="color:white;" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="button" class="btn">NEXT</button>
+                </form> -->
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <h2>PROD Credentials</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-id-card'></i></i></span>
+                        <input type="text" name="intranetID" style="color:white;" required>
+                        <label>Intranet ID</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" name="password" style="color:white;" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit" class="btn">NEXT</button>
+                    {% if error %}
+                        <p style="color:red;">{{ error }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="username">Developed by: Aryaman Pandey</div>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

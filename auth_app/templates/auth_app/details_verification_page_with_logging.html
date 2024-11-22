@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Artificial Data Generator</title>
+    <link href="{% static 'source_info/index.css' %}" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <div class="text-item">
+                <h1 id="artificial">ARTIFICIAL</h1>
+                <h3 id="data-generator">DATA GENERATOR</h3>
+                <div id="time"></div>
+            </div>
+        </div>
+        <h1>{{ message }}</h1>
+
+        <!-- LOGIN FORM -->
+        <!-- <div class="login-section" id="login-section">
+            <div class="form-box login" id="loginForm">
+                <form method="POST" action="#">
+                    {% csrf_token %}
+                    <h2>Source Details</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-data'></i></i></span>
+                        <input type="text" name="source_database" style="color:white;" required>
+                        <label>Source Database</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-table' ></i></i></span>
+                        <input type="text" name="source_table" style="color:white;" required>
+                        <label>Source Table</label>
+                    </div>
+                    <button type="submit" class="btn">NEXT</button>
+                    {% if error %}
+                        <p style="color:red;">{{ error }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div> -->
+    </div>
+    <div id="username">Developed by: Aryaman Pandey</div>
+    <script src="{% static 'source_info/index.js' %}"></script>
+</body>
+</html>
+
